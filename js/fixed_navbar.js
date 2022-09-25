@@ -41,12 +41,17 @@ var icon = $(icon_sel);
 // For header height calculation.
 var header = $(header_sel);
 
-// Header height in pixels.
-header_height = 80;
+var header_height;
 
 if (header)
 {
     header_height = header.height();
+}
+
+if (header_height < 1)
+{
+    // Header height in pixels.
+    header_height = 80;
 }
 
 // Navbar max height in pixels.
