@@ -1,6 +1,7 @@
 /**
  * Description - Uses jQuery to make IPS 4's default theme's navbar fixed when you scroll down past the header on the page. Using for The Modding Community!
  * Author - Christian Deacon (@gamemann)
+ * Open Source - https://github.com/modcommunity/Web-Open-Source
  * 
  * 
  * The Modding Community
@@ -169,7 +170,7 @@ $(window).resize(function()
     {
         return;
     }
-    
+
     // If our margin (bottom) is more than 0px, this indicates a user went from desktop to mobile theme. So set back margin bottom.
     var margin = header_layout.css('margin-bottom');
 
