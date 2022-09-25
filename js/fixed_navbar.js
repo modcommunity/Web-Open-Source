@@ -52,6 +52,11 @@ if (header)
 // Navbar max height in pixels.
 navbar_maxheight = navbars.first().height();
 
+if (navbar_maxheight < 1)
+{
+    navbar_maxheight = 52;
+}
+
 // Check to see if we should just add a custom class to the navbar.
 if (nav_addclass.length > 0)
 {
