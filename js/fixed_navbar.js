@@ -169,6 +169,7 @@ $(window).resize(function()
     {
         return;
     }
+    
     // If our margin (bottom) is more than 0px, this indicates a user went from desktop to mobile theme. So set back margin bottom.
     var margin = header_layout.css('margin-bottom');
 
