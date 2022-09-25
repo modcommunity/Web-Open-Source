@@ -17,29 +17,35 @@ nav_addclass = "";
 // Navbar(s) selection.
 var navbar_sel = "#ipsLayout_header nav";
 
-// Icon image, class, or ID selector.
-var icon_sel = "#nav-icon-fixed";
-
-// Header height in pixels.
-header_height = 82;
-
-// Navbar max height in pixels.
-navbar_maxheight = 52;
-
 // Retrieve elements we need to change for The Modding Community's website.
 var navbars = $(navbar_sel);
 
 // Always do error checks :)
 if (!navbars)
 {
-    throw new Error("[TMC Fixed Navbar] Could not find IPS 4 navbars.")
+    throw new Error("[TMC Fixed Navbar] Could not find IPS 4 navbars.");
 }
 
-// If an icon image exist, enable that.
-var icon = $(icon_sel);
+// Header selection.
+var header_sel = "#ipsLayout_header header";
+
+// Icon image, class, or ID selector.
+var icon_sel = "#nav-icon-fixed";
 
 // IPS 4 header layout.
 var header_layout = $("#ipsLayout_header");
+
+// If an icon image exist, enablethat.
+var icon = $(icon_sel);
+
+// For header height calculation.
+var header = $(header_sel);
+
+// Header height in pixels.
+header_height = header.height();
+
+// Navbar max height in pixels.
+navbar_maxheight = navbars.first().height();
 
 // Check to see if we should just add a custom class to the navbar.
 if (nav_addclass.length > 0)
@@ -81,7 +87,6 @@ $(window).scroll(function(e)
     // Check if we're under the header or not.
     if (pos > header_height && !fixed)
     {
-
         if (fix_class.length < 1)
         {
             navbars.css('position', 'fixed');
