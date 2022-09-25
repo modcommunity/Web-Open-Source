@@ -86,6 +86,12 @@ fixed = false;
 // Loop through the full window's scroll events.
 $(window).scroll(function(e)
 {
+    // If the navbar is hidden, return so it doesn't impact mobile devices.
+    if (navbars.first().is(":hidden"))
+    {
+        return;
+    }
+    
     // Retrieve current Y position.
     pos = window.scrollY;
 
