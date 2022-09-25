@@ -63,6 +63,9 @@ if (navbar_maxheight < 1)
     navbar_maxheight = 52;
 }
 
+// Fixed transparently.
+var fixed_opacity = 0.7;
+
 // Check to see if we should just add a custom class to the navbar.
 if (nav_addclass.length > 0)
 {
@@ -94,6 +97,9 @@ navbars.each(function(i)
 // Fixed toggle variable.
 fixed = false;
 
+// Position (Y).
+var pos = 0;
+
 // Loop through the full window's scroll events.
 $(window).scroll(function(e)
 {
@@ -119,8 +125,8 @@ $(window).scroll(function(e)
     {
         if (fix_class.length < 1)
         {
+            navbars.css('background', 'rgba(var(--theme-main_nav), 1.0)');
             navbars.css('position', 'fixed');
-            //navbars.css('margin-bottom', '80px');
         }
         else
         {
@@ -143,6 +149,7 @@ $(window).scroll(function(e)
         // Revert back to non-fixed navbar.
         if (unfix_class.length < 1)
         {
+            navbars.css('background', 'rgba(var(--theme-main_nav), ' + fixed_opacity + ')');
             navbars.css('position', 'relative');
         }
         else
@@ -178,6 +185,4 @@ $(window).resize(function()
     {
         header_layout.css('margin-bottom', '0px');
     }
-
-    return;
 });
