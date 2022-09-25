@@ -162,3 +162,20 @@ $(window).scroll(function(e)
         fixed = false;
     }
 });
+
+$(window).resize(function()
+{
+    if (navbars.first().is(":visible"))
+    {
+        return;
+    }
+    // If our margin (bottom) is more than 0px, this indicates a user went from desktop to mobile theme. So set back margin bottom.
+    var margin = header_layout.css('margin-bottom');
+
+    if (margin && parseInt(margin) > 0)
+    {
+        header_layout.css('margin-bottom', '0px');
+    }
+
+    return;
+});
