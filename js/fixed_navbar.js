@@ -64,7 +64,8 @@ if (navbar_maxheight < 1)
 }
 
 // Fixed transparently.
-var fixed_opacity = 0.7;
+var unfixed_opacity = 0.7;
+var fixed_opacity = 1.0;
 
 // Check to see if we should just add a custom class to the navbar.
 if (nav_addclass.length > 0)
@@ -74,12 +75,13 @@ if (nav_addclass.length > 0)
 else
 {
     // Set general navbar settings for fixed support.
-    navbars.css('max-height', navbar_maxheight);
     navbars.css('z-index', '100');
     navbars.css('width', '100%');
     navbars.css('top', '0px');
     navbars.css('left', '0px');
 }
+
+navbars.css('max-height', navbar_maxheight);
 
 // Leaving commented function just because it was somewhat neat.
 /*
@@ -111,7 +113,7 @@ $(window).scroll(function(e)
 
         if (margin && parseInt(margin) > 0)
         {
-            header_layout.css('margin-bottom', '0px');
+            header_layout.css('margin-bottom', navbar_maxheight);
         }
 
         return;
@@ -125,12 +127,13 @@ $(window).scroll(function(e)
     {
         if (fix_class.length < 1)
         {
-            navbars.css('background', 'rgba(var(--theme-main_nav), 1.0)');
+            navbars.css('background', 'rgba(var(--theme-main_nav), ' + fixed_opacity + ')');
             navbars.css('position', 'fixed');
         }
         else
         {
             navbars.addClass(fix_class);
+            navbars.removeClass(unfix_class);
         }
 
         if (icon)
@@ -149,12 +152,13 @@ $(window).scroll(function(e)
         // Revert back to non-fixed navbar.
         if (unfix_class.length < 1)
         {
-            navbars.css('background', 'rgba(var(--theme-main_nav), ' + fixed_opacity + ')');
+            navbars.css('background', 'rgba(var(--theme-main_nav), ' + unfixed_opacity + ')');
             navbars.css('position', 'relative');
         }
         else
         {
             navbars.addClass(unfix_class);
+            navbars.removeClass(fix_class);
         }
 
         if (icon)
