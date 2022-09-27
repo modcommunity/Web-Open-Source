@@ -1,0 +1,24 @@
+.nav-class {
+    z-index: 100;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.nav-class-fixed {
+   position: fixed !important;
+  background: rgba(var(--theme-main_nav), 1.0) !important;
+}
+
+.nav-class-fixed::after {
+  background: rgb( var(--theme-main_nav_tab), 1.0) !important;
+}
+
+.nav-class-unfixed {
+   position: relative !important;
+    background: rgba(var(--theme-main_nav), 0.7) !important;
+}
+
+.nav-class-unfixed:after {
+    background: rgba(var(--theme-main_nav_tab), 0.7) !important;
+}
