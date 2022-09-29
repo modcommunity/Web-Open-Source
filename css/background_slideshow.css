@@ -1,0 +1,21 @@
+#bgol 
+{
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:-100;
+    background:rgb(0 24 24/85%);
+}
+
+#bgimg 
+{
+    background-size:cover;
+    top:0;
+    left:0;
+    z-index:-200;
+    width:100%;
+    height:100%;
+    position:fixed;
+}
