@@ -10,13 +10,13 @@ Want to become a part of something awesome? Help us take modding to the next lev
 
 ## Files
 ### Fixed Navbar
-**Files** - `js/fixed_navbar.js` and `css/fixsed_navbar.css`.
+**Files** - `js/fixed_navbar.js` and `css/fixsed_navbar.css`.  
 **Credits** - Christian Deacon ([@gamemann](https://github.com/gamemann))
 
 Written in JavaScript utilizing jQuery. When the user scrolls down and past the header, it makes the navbar fixed with a non-transparent background. The defaults in this application assume you're using IPS 4, but could easily be modified to do it anywhere.
 
 ### Background Slideshow
-**Files** - `js/background_slideshow.js`
+**Files** - `js/background_slideshow.js`.  
 **Credits** - Christian Deacon ([@gamemann](https://github.com/gamemann))
 
 Written in JavaScript and partially utilizing jQuery. Code was used from Christian's older project, [Browser.TF](https://Browser.TF/). Basically applies a random background image to a divider with the ID `#bgimg`. You should have `<div id="bgimg"></div>` and/or `<div id="bgol"></div>` (if you want to add transparently). The CSS code could look something like the following.
